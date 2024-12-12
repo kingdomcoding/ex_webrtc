@@ -10,6 +10,10 @@ defmodule ExWebRTC.ICE.FlyIpFilter do
   @spec ip_filter(:inet.ip_address()) :: boolean()
   def ip_filter(ip_address) do
     IO.inspect(ip_address, label: "ExWebRTC.ICE.FlyIpFilter ip_address")
+
+    :inet.gethostbyname(~c"fly-global-services")
+    |> IO.inspect(label: "ExWebRTC.ICE.FlyIpFilter :inet.gethostbyname(fly-global-services)")
+
     case :inet.gethostbyname(~c"fly-global-services") do
       # Assume that fly-global-services has to resolve
       # to a single ipv4 address.
@@ -20,6 +24,6 @@ defmodule ExWebRTC.ICE.FlyIpFilter do
       _ ->
         false
     end
-    |> IO.inspect(label: "ExWebRTC.ICE.FlyIpFilter :inet.gethostbyname(fly-global-services)")
+    |> IO.inspect(label: "ExWebRTC.ICE.FlyIpFilter equal?")
   end
 end
