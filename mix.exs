@@ -57,7 +57,7 @@ defmodule ExWebRTC.MixProject do
   defp deps do
     [
       {:ex_sdp, "~> 1.0"},
-      {:ex_ice, git: "https://github.com/kingdomcoding/ex_ice.git", ref: "95986b811fd74c02ffb63bb1592eeb0d24d4ee30", override?: true},
+      {:ex_ice, git: "https://github.com/kingdomcoding/ex_ice.git", ref: "95986b811fd74c02ffb63bb1592eeb0d24d4ee30"},
       {:ex_dtls, "~> 0.16.0"},
       {:ex_libsrtp, "~> 0.7.1"},
       {:ex_rtp, "~> 0.4.0"},
